@@ -15,7 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+# from oddam_app.views import LandingPage, AddDonation, Login, Register
+from oddam_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.landingpage, name='landing_page'),
+    path('add_donation/', views.addonation, name='add_donation'),
+    # path('login/', views.Login.as_view(), name='login'),
+    path('login/', views.login, name='login'),
+    path('register/', views.register, name='register'),
+#     TEMPORARY, FOR TESTING
+#     path('base/', views.base),
 ]
