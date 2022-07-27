@@ -24,7 +24,7 @@ class Donation(models.Model):
     categories = models.ManyToManyField(Category)
     institution = models.ForeignKey(Institution, on_delete=models.CASCADE)
     address = models.CharField(max_length=64)
-    phone_number = models.SmallIntegerField(max_length=12)
+    phone_number = models.SmallIntegerField()
     city = models.CharField(max_length=64)
     zip_code = models.CharField(max_length=6)
     pick_up_date = models.DateTimeField(default=datetime.now())
